@@ -8,31 +8,27 @@ export const Contact = () => {
   const [email, setEmail] = useState("");
   const [nome, setNome] = useState("");
   const [mensagem, setMensagem] = useState("");
-  const [status, setStatus] = useState('');
+  const [status, setStatus] = useState("");
 
   const handleClick = (e) => {
     e.preventDefault();
     console.log(nome);
     console.log(email);
     console.log(mensagem);
-    
-    setStatus('Enviando...');
 
+    setStatus("Enviando...");
     setEmail(" ");
     setNome(" ");
     setMensagem(" ");
   };
 
-  useEffect(()=>{
-    if(status ==='Enviando...'){
-      setTimeout(()=>{
-        setStatus('Mensagem enviada com sucesso!')
+  useEffect(() => {
+    if (status === "Enviando...") {
+      setTimeout(() => {
+        setStatus("Mensagem enviada com sucesso!");
       }, 2000);
     }
   }, [status]);
-
-
-
 
   return (
     <div>
@@ -52,8 +48,7 @@ export const Contact = () => {
 
       <Card
         title="Formulario para contato:"
-        description="Prencha os campos abaixo para entrar em contato conosco"   
-    
+        description="Prencha os campos abaixo para entrar em contato conosco"
       />
 
       <form>
